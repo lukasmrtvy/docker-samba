@@ -1,4 +1,4 @@
-FROM alpine:latest
+ROM alpine:latest
 
 ENV UID 1000
 ENV GID 1000
@@ -15,6 +15,14 @@ ADD smb.conf /config/
 ADD supervisord.conf /config/
 ADD entrypoint.sh /entrypoint.sh
 
+ENTRYPOINT ["/entrypoint.sh"]
+
+LABEL url=
+LABEL name=samba
+LABEL version=
+
 VOLUME /config /tmp/
 
-CMD entrypoint.sh
+CMD /usr/bin/supervisord -c /config/supervisord.conf
+
+
