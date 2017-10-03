@@ -17,11 +17,6 @@ ADD smb.conf /config/
 ADD supervisord.conf /config/
 ADD entrypoint.sh /entrypoint.sh
 
-#RUN chmod +x entrypoint.sh
-
-#RUN echo -e "${PWD}\n${PWD}" | smbpasswd -a -s -c /config/smb.conf ${USER}
-#CMD  /usr/bin/supervisord -c /config/supervisord.conf
-
 ENTRYPOINT ["/entrypoint.sh"]
 
 LABEL url=https://api.github.com/repos/samba-team/samba/releases/latest
