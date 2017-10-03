@@ -15,6 +15,4 @@ ADD smb.conf /config/
 ADD supervisord.conf /config/
 ADD entrypoint.sh /entrypoint.sh
 
-RUN chmod +x entrypoint.sh
-
 CMD entrypoint.sh
