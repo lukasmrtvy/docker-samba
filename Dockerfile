@@ -15,4 +15,6 @@ ADD smb.conf /config/
 ADD supervisord.conf /config/
 ADD entrypoint.sh /entrypoint.sh
 
+VOLUME /config /tmp/
+
 CMD entrypoint.sh
