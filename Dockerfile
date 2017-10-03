@@ -1,4 +1,4 @@
-ROM alpine:latest
+FROM alpine:latest
 
 ENV UID 1000
 ENV GID 1000
