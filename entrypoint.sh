@@ -10,4 +10,4 @@ else
   exit 1
 fi
 
-exec /usr/bin/supervisord -c /config/supervisord.conf
+exec "$@"
