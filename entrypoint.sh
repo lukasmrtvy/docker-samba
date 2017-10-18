@@ -1,12 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
-if [[ -n ${PWD} ]];then
+if [ ! -d /mnt/ext ]; then
+  echo "Volume must be mounted to /mnt/ext"
+  exit 1
+fi
+
+if [ -n "${SMBUSER_PWD+x}" ]; then
   pdbedit  -L -u ${USER}
   if [[  $? -ne 0 ]]; then
-    echo -e "${PWD}\n${PWD}" | smbpasswd -a -s -c /config/smb.conf ${USER}
+    echo "Creating password for ${USER}"
+    echo -e "${SMBUSER_PWD}\n${SMBUSER_PWD}" | smbpasswd -a -s -c /config/smb.conf ${USER}
   fi
 else
-  echo "env variable PWD is not supplied"
+  echo "Env variable SMBUSER_PWD is not supplied"
   exit 1
 fi
 
