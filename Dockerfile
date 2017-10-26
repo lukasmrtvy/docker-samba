@@ -5,7 +5,7 @@ ENV GID 1000
 ENV USER htpc
 ENV GROUP htpc
 
-ENV SAMBA_VERSION 4.6.4-r1
+ENV SAMBA_VERSION 4.6.8-r0
 
 RUN addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} -G ${GROUP} && \
     apk update --no-cache  && apk add --no-cache bash samba=${SAMBA_VERSION} supervisor && \
