@@ -10,7 +10,7 @@ ENV SAMBA_VERSION 4.6.8-r0
 COPY entrypoint.sh /entrypoint.sh
 
 RUN addgroup -S ${GROUP} -g ${GID} && adduser -D -S -u ${UID} ${USER} -G ${GROUP} && \
-    apk update --no-cache  && apk add --no-cache bash samba=${SAMBA_VERSION} supervisor && \
+    apk update --no-cache  && apk add --no-cache tzdata samba=${SAMBA_VERSION} supervisor && \
     mkdir -p /config && \
     chmod +x /entrypoint.sh
 
