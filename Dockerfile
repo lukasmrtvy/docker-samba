@@ -5,7 +5,7 @@ ENV GID 1000
 ENV USER htpc
 ENV GROUP htpc
 
-ENV SAMBA_VERSION 4.6.8-r0
+ENV SAMBA_VERSION 4.7.6-r0
 
 COPY entrypoint.sh /entrypoint.sh
 
